@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AE70106209D717100DE9FA1 /* SharkORM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE700FC209D717100DE9FA1 /* SharkORM.framework */; };
+		3AE7010B209D717100DE9FA1 /* SharkORMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7010A209D717100DE9FA1 /* SharkORMTests.swift */; };
+		3AE7010D209D717100DE9FA1 /* SharkORM.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AE700FF209D717100DE9FA1 /* SharkORM.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE70118209D728100DE9FA1 /* SQLiteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE70117209D728100DE9FA1 /* SQLiteProvider.swift */; };
+		3AE7011A209D72CD00DE9FA1 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE70119209D72CD00DE9FA1 /* DatabaseInterface.swift */; };
+		3AE7011C209D732A00DE9FA1 /* SharkSyncLiveProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7011B209D732A00DE9FA1 /* SharkSyncLiveProvider.swift */; };
+		3AE7011E209D736600DE9FA1 /* SharkSyncProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7011D209D736600DE9FA1 /* SharkSyncProvider.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AE70107209D717100DE9FA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AE700F3209D717100DE9FA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AE700FB209D717100DE9FA1;
+			remoteInfo = SharkORM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3AE700FC209D717100DE9FA1 /* SharkORM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharkORM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE700FF209D717100DE9FA1 /* SharkORM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharkORM.h; sourceTree = "<group>"; };
+		3AE70100209D717100DE9FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE70105209D717100DE9FA1 /* SharkORMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharkORMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE7010A209D717100DE9FA1 /* SharkORMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkORMTests.swift; sourceTree = "<group>"; };
+		3AE7010C209D717100DE9FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE70117209D728100DE9FA1 /* SQLiteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteProvider.swift; sourceTree = "<group>"; };
+		3AE70119209D72CD00DE9FA1 /* DatabaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseInterface.swift; sourceTree = "<group>"; };
+		3AE7011B209D732A00DE9FA1 /* SharkSyncLiveProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkSyncLiveProvider.swift; sourceTree = "<group>"; };
+		3AE7011D209D736600DE9FA1 /* SharkSyncProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkSyncProvider.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AE700F8209D717100DE9FA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE70102209D717100DE9FA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE70106209D717100DE9FA1 /* SharkORM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AE700F2209D717100DE9FA1 = {
+			isa = PBXGroup;
+			children = (
+				3AE700FE209D717100DE9FA1 /* SharkORM */,
+				3AE70109209D717100DE9FA1 /* SharkORMTests */,
+				3AE700FD209D717100DE9FA1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3AE700FD209D717100DE9FA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AE700FC209D717100DE9FA1 /* SharkORM.framework */,
+				3AE70105209D717100DE9FA1 /* SharkORMTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AE700FE209D717100DE9FA1 /* SharkORM */ = {
+			isa = PBXGroup;
+			children = (
+				3AE70116209D71F500DE9FA1 /* SQLite */,
+				3AE700FF209D717100DE9FA1 /* SharkORM.h */,
+				3AE70100209D717100DE9FA1 /* Info.plist */,
+			);
+			path = SharkORM;
+			sourceTree = "<group>";
+		};
+		3AE70109209D717100DE9FA1 /* SharkORMTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AE7010A209D717100DE9FA1 /* SharkORMTests.swift */,
+				3AE7010C209D717100DE9FA1 /* Info.plist */,
+			);
+			path = SharkORMTests;
+			sourceTree = "<group>";
+		};
+		3AE70116209D71F500DE9FA1 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				3AE70117209D728100DE9FA1 /* SQLiteProvider.swift */,
+				3AE70119209D72CD00DE9FA1 /* DatabaseInterface.swift */,
+				3AE7011B209D732A00DE9FA1 /* SharkSyncLiveProvider.swift */,
+				3AE7011D209D736600DE9FA1 /* SharkSyncProvider.swift */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3AE700F9209D717100DE9FA1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE7010D209D717100DE9FA1 /* SharkORM.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3AE700FB209D717100DE9FA1 /* SharkORM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE70110209D717100DE9FA1 /* Build configuration list for PBXNativeTarget "SharkORM" */;
+			buildPhases = (
+				3AE700F7209D717100DE9FA1 /* Sources */,
+				3AE700F8209D717100DE9FA1 /* Frameworks */,
+				3AE700F9209D717100DE9FA1 /* Headers */,
+				3AE700FA209D717100DE9FA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SharkORM;
+			productName = SharkORM;
+			productReference = 3AE700FC209D717100DE9FA1 /* SharkORM.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3AE70104209D717100DE9FA1 /* SharkORMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE70113209D717100DE9FA1 /* Build configuration list for PBXNativeTarget "SharkORMTests" */;
+			buildPhases = (
+				3AE70101209D717100DE9FA1 /* Sources */,
+				3AE70102209D717100DE9FA1 /* Frameworks */,
+				3AE70103209D717100DE9FA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AE70108209D717100DE9FA1 /* PBXTargetDependency */,
+			);
+			name = SharkORMTests;
+			productName = SharkORMTests;
+			productReference = 3AE70105209D717100DE9FA1 /* SharkORMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AE700F3209D717100DE9FA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = SharkSync;
+				TargetAttributes = {
+					3AE700FB209D717100DE9FA1 = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					3AE70104209D717100DE9FA1 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 3AE700F6209D717100DE9FA1 /* Build configuration list for PBXProject "SharkORM" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3AE700F2209D717100DE9FA1;
+			productRefGroup = 3AE700FD209D717100DE9FA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AE700FB209D717100DE9FA1 /* SharkORM */,
+				3AE70104209D717100DE9FA1 /* SharkORMTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AE700FA209D717100DE9FA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE70103209D717100DE9FA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AE700F7209D717100DE9FA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE7011A209D72CD00DE9FA1 /* DatabaseInterface.swift in Sources */,
+				3AE7011C209D732A00DE9FA1 /* SharkSyncLiveProvider.swift in Sources */,
+				3AE70118209D728100DE9FA1 /* SQLiteProvider.swift in Sources */,
+				3AE7011E209D736600DE9FA1 /* SharkSyncProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE70101209D717100DE9FA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE7010B209D717100DE9FA1 /* SharkORMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AE70108209D717100DE9FA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AE700FB209D717100DE9FA1 /* SharkORM */;
+			targetProxy = 3AE70107209D717100DE9FA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3AE7010E209D717100DE9FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3AE7010F209D717100DE9FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3AE70111209D717100DE9FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3D9YGMP46N;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SharkORM/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.sharksync.swiftyshark.SharkORM;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3AE70112209D717100DE9FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3D9YGMP46N;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SharkORM/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.sharksync.swiftyshark.SharkORM;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3AE70114209D717100DE9FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3D9YGMP46N;
+				INFOPLIST_FILE = SharkORMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.sharksync.swiftyshark.SharkORMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3AE70115209D717100DE9FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3D9YGMP46N;
+				INFOPLIST_FILE = SharkORMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.sharksync.swiftyshark.SharkORMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AE700F6209D717100DE9FA1 /* Build configuration list for PBXProject "SharkORM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE7010E209D717100DE9FA1 /* Debug */,
+				3AE7010F209D717100DE9FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE70110209D717100DE9FA1 /* Build configuration list for PBXNativeTarget "SharkORM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE70111209D717100DE9FA1 /* Debug */,
+				3AE70112209D717100DE9FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE70113209D717100DE9FA1 /* Build configuration list for PBXNativeTarget "SharkORMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE70114209D717100DE9FA1 /* Debug */,
+				3AE70115209D717100DE9FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AE700F3209D717100DE9FA1 /* Project object */;
+}
