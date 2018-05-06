@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double SharkORMVersionNumber;
 FOUNDATION_EXPORT const unsigned char SharkORMVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SharkORM/PublicHeader.h>
-
-

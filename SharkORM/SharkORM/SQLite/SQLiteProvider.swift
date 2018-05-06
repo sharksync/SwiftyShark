@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import SQLite3
 
-class SQLiteProvider, DatabaseInterface {
+class SQLiteProvider : DatabaseInterface {
     
 }
