@@ -8,17 +8,7 @@
 
 import Foundation
 
-internal enum StorageDataType {
-    
-    case Text
-    case Blob
-    case Null
-    case Int
-    case Double
-    
-}
-
-internal enum InterfaceDataType {
+internal enum DataType {
     
     case String
     case Float
@@ -29,5 +19,7 @@ internal enum InterfaceDataType {
     case SharkObject
     case Array
     case Dictionary
+    case Null
     
 }
+
