@@ -6,10 +6,3 @@
 //  Copyright © 2018 SharkSync. All rights reserved.
 //
 
-import Foundation
-
-public class SharkORM {
-    
-    
-    
-}

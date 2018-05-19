@@ -21,7 +21,6 @@
 //    SOFTWARE.
 
 import Foundation
-import SharkORM.Private
 
 class SyncRequest {
     

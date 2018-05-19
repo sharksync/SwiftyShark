@@ -8,7 +8,8 @@
 
 import Foundation
 
-@objc public class SyncService { 
+@objc public class SyncService : NSObject {
+    
     @objc public class func StartService() -> Void {
         SyncNetwork.sharedInstance.active = true
     }
@@ -18,4 +19,5 @@ import Foundation
     @objc public class func SynchroniseNow() -> Void {
         SyncNetwork.sharedInstance.synchroniseNow()
     }
+    
 }

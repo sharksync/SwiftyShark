@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias Record = [String:Value]
+
 public class Value {
     
     var stringValue: String!

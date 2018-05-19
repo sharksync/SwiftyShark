@@ -20,15 +20,11 @@
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //    SOFTWARE.
 
-import AppKit
 import CommonCrypto
 import UIKit
 
-#if TARGET_OS_IPHONE
 typealias XXImage = UIImage
-#else
-typealias XXImage = NSImage
-#endif
+
 enum SharkSyncOperation : Int {
     case create = 1
     // a new object has been created
@@ -43,6 +39,22 @@ enum SharkSyncOperation : Int {
 
 
 class SharkSync {
+    
+    class private func getEffectiveRecordGroup() -> String? {
+    }
+    
+    class private func setEffectiveRecorGroup(_ group: String?) {
+    }
+    
+    class private func clearEffectiveRecordGroup() {
+    }
+    
+    class private func decryptValue(_ value: String?) -> Any? {
+    }
+    
+    class private func queueObject(_ object: SRKEntity?, withChanges changes: [AnyHashable: Any]?, withOperation operation: Int, inHashedGroup group: String?) {
+    }
+    
     var concurrentRecordGroups = [AnyHashable: Any]()
 
     class func initService(withApplicationId application_key: String?, apiKey account_key: String?) {

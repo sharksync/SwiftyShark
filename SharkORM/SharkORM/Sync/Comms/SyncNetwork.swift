@@ -26,8 +26,7 @@ import Foundation
 class SyncNetwork  { 
     
     static let sharedInstance = SyncNetwork()
-    override private init() {
-        super.init()
+    init() {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
             self.runQueue()
         }
