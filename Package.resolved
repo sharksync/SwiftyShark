@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CSQLite",
+        "repositoryURL": "https://github.com/VeldsparCrypto/CSQlite.git",
+        "state": {
+          "branch": null,
+          "revision": "c4a24956f063d4f01824f8a9c5123cb5edc4dd34",
+          "version": "1.0.8"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
