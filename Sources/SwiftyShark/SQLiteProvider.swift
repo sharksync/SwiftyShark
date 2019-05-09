@@ -1,3 +1,12 @@
+//
+//  SQLiteProvider.swift
+//  SwiftyShark
+//
+//  Created by Adrian Herridge on 08/05/2019.
+//
+
+import Foundation
+
 #if os(Linux)
 import CSQLiteLinux
 #else
@@ -5,195 +14,15 @@ import CSQLiteDarwin
 #endif
 
 import Dispatch
-import Foundation
 
 internal let SQLITE_STATIC = unsafeBitCast(0, to: sqlite3_destructor_type.self)
 internal let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
 
-public typealias Record = [String:Value]
-
-public enum DataType {
-    case String
-    case Blob
-    case Null
-    case Int
-    case Double
-}
-
-public enum SWSQLOp {
-    case Insert
-    case Update
-    case Delete
-}
-
-func unwrap(_ subject: Any?) -> Any? {
-    var value: Any?
-    if subject == nil {
-        return nil;
-    }
-    let mirrored = Mirror(reflecting:subject!)
-    if mirrored.displayStyle != .optional {
-        value = subject
-    } else if let firstChild = mirrored.children.first {
-        value = firstChild.value
-    }
-    return value
-}
-
-public class Value {
-    
-    var stringValue: String!
-    var blobValue: Data!
-    var numericValue: NSNumber!
-    var type: DataType
-    
-    public init(_ value: Any?) {
-        
-        var testValue: Any? = nil
-        if value != nil {
-            testValue = unwrap(value)
-        }
-        
-        if testValue as Any? == nil {
-            type = .Null
-            return;
-        }
-        
-        let mirror = Mirror(reflecting: value!)
-        if mirror.subjectType == String.self || mirror.subjectType == String?.self {
-            type = .String
-            stringValue = value as! String
-        } else if (mirror.subjectType == Float.self || mirror.subjectType == Float?.self) {
-            type = .Double
-            numericValue = NSNumber(value: value as! Float)
-        } else if (mirror.subjectType == Double.self || mirror.subjectType == Double?.self) {
-            type = .Double
-            numericValue = NSNumber(value: value as! Double)
-        } else if (mirror.subjectType == Data.self || mirror.subjectType == Data?.self) {
-            type = .Blob
-            blobValue = value as! Data
-        } else if (mirror.subjectType == Int.self || mirror.subjectType == Int?.self) {
-            type = .Int
-            numericValue = NSNumber(value: value as! Int)
-        } else if (mirror.subjectType == Int64.self || mirror.subjectType == Int64?.self) {
-            type = .Int
-            numericValue = NSNumber(value: value as! Int64)
-        } else if (mirror.subjectType == UInt64.self || mirror.subjectType == UInt64?.self) {
-            type = .Int
-            numericValue = NSNumber(value: value as! UInt64)
-        } else if (value is NSNumber) {
-            type = .Double
-            numericValue = value as! NSNumber
-        } else if (value is NSString) {
-            type = .String
-            stringValue = value as! String
-        } else {
-            type = .Null
-        }
-    }
-    
-    public func asBool() -> Bool {
-        if type == .Int {
-            return numericValue.boolValue
-        }
-        return false
-    }
-    
-    public func asAny() -> Any? {
-        
-        if type == .String {
-            return stringValue
-        }
-        
-        if type == .Int {
-            return Int(numericValue.intValue)
-        }
-        
-        if type == .Double {
-            return Double(numericValue.doubleValue)
-        }
-        
-        if type == .Blob {
-            return blobValue
-        }
-        
-        return nil
-    }
-    
-    public func asString() -> String? {
-        if type == .String {
-            return stringValue
-        }
-        return nil
-    }
-    
-    public func asInt() -> Int? {
-        
-        if type == .Int {
-            return numericValue.intValue
-        }
-        
-        return nil
-    }
-    
-    public func asInt64() -> Int64? {
-        
-        if type == .Int {
-            return numericValue.int64Value
-        }
-        
-        return nil
-    }
-    
-    public func asUInt64() -> UInt64? {
-        
-        if type == .Int {
-            return numericValue.uint64Value
-        }
-        
-        return nil
-    }
-    
-    public func asDouble() -> Double? {
-        
-        if type == .Double {
-            return numericValue.doubleValue
-        }
-        
-        return nil
-    }
-    
-    public func asData() -> Data? {
-        
-        if type == .Blob {
-            return blobValue
-        }
-        
-        return nil
-    }
-    
-    public func getType() -> DataType {
-        return type
-    }
-    
-}
-
-public class Result {
-    
-    public var results: [Record] = []
-    public var error: String? = nil
-    
-    public init() {
-        
-    }
-    
-}
-
-public class SwiftyShark {
+class SQLiteProvider: DataProvider {
     
     var db: OpaquePointer?
     
-    public init(path: String, filename: String) {
+    init(path: String, filename: String) {
         
         // create any folders up until this point as well
         try? FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: false, attributes: nil)
@@ -236,10 +65,6 @@ public class SwiftyShark {
         
         return result
         
-    }
-    
-    public func execute(compiledAction: SWSQLAction) -> Result {
-        return execute(sql: compiledAction.statement, params: compiledAction.parameters)
     }
     
     public func create<T>(_ object: T, pk: String, auto: Bool, indexes: [String]) where T: Encodable {
@@ -484,18 +309,3 @@ public class SwiftyShark {
     }
     
 }
-
-public class SWSQLAction {
-    
-    var statement: String
-    var parameters: [Any]
-    var op: SWSQLOp
-    
-    public init (stmt: String, params: [Any], operation: SWSQLOp) {
-        self.statement = stmt
-        self.parameters = params
-        self.op = operation
-    }
-    
-}
-
