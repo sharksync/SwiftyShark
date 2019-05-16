@@ -17,26 +17,19 @@ public enum SWSQLOp {
     case Delete
 }
 
-func unwrap(_ subject: Any?) -> Any? {
-    var value: Any?
-    if subject == nil {
-        return nil;
-    }
-    let mirrored = Mirror(reflecting:subject!)
-    if mirrored.displayStyle != .optional {
-        value = subject
-    } else if let firstChild = mirrored.children.first {
-        value = firstChild.value
-    }
-    return value
-}
-
 public class SwiftyShark {
     
     var provider: DataProvider
+    var readerLock: Mutex = Mutex()
+    var writerLock: Mutex = Mutex()
+    
+    static var defaultProvider: DataProvider?
     
     public init(provider: DataProvider) {
         self.provider = provider
+        if SwiftyShark.defaultProvider == nil {
+            SwiftyShark.defaultProvider = provider
+        }
     }
     
     func close() {
@@ -47,7 +40,7 @@ public class SwiftyShark {
         return self.provider.execute(sql: sql, params: params, silenceErrors: silenceErrors)
     }
     
-    public func create<T>(_ object: T, pk: String, auto: Bool, indexes: [String]) where T: Encodable {
+    public func create<T>(_ object: T, pk: String, auto: Bool, indexes: [String]) where T: Codable {
         self.provider.create(object, pk: pk, auto: auto, indexes: indexes)
     }
     

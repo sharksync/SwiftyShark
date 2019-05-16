@@ -11,7 +11,7 @@ public protocol DataProvider {
     
     func close()
     func execute(sql: String, params:[Any?], silenceErrors: Bool) -> Result
-    func create<T>(_ object: T, pk: String, auto: Bool, indexes: [String]) where T: Encodable
+    func create<T>(_ object: T, pk: String, auto: Bool, indexes: [String]) where T: Codable
     func put<T>(_ object: T) -> Result where T: Codable
     func query<T>(_ object: T, sql: String, params: [Any?]) -> [T] where T: Codable
     func upsert(table: String, values: [String:Any?]) -> Result

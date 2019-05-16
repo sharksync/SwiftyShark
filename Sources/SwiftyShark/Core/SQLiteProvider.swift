@@ -67,7 +67,7 @@ class SQLiteProvider: DataProvider {
         
     }
     
-    public func create<T>(_ object: T, pk: String, auto: Bool, indexes: [String]) where T: Encodable {
+    public func create<T>(_ object: T, pk: String, auto: Bool, indexes: [String]) where T: Codable {
         
         let mirror = Mirror(reflecting: object)
         let name = "\(mirror)".split(separator: " ").last!
@@ -134,6 +134,8 @@ class SQLiteProvider: DataProvider {
             }
         }
         
+        let newId = 100;
+
         return execute(sql: "INSERT OR REPLACE INTO \(name) (\(columns.joined(separator: ","))) VALUES (\(placeholders.joined(separator: ",")))", params: params)
         
     }
