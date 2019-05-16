@@ -32,7 +32,7 @@ public class SwiftyShark {
         }
     }
     
-    func close() {
+    public func close() {
         self.provider.close()
     }
     

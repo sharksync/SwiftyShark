@@ -18,7 +18,7 @@ import Dispatch
 internal let SQLITE_STATIC = unsafeBitCast(0, to: sqlite3_destructor_type.self)
 internal let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
 
-class SQLiteProvider: DataProvider {
+public class SQLiteProvider: DataProvider {
     
     var db: OpaquePointer?
     
