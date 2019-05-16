@@ -22,7 +22,7 @@ public class SQLiteProvider: DataProvider {
     
     var db: OpaquePointer?
     
-    init(path: String, filename: String) {
+    public init(path: String, filename: String) {
         
         // create any folders up until this point as well
         try? FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: false, attributes: nil)
