@@ -1,7 +1,7 @@
 import XCTest
 @testable import SwiftyShark
 
-final class Department: Codable, SharkyObject {
+final class Department: Codable {
     
     var id: Int?
     var name: String?
@@ -9,7 +9,7 @@ final class Department: Codable, SharkyObject {
     
 }
 
-final class Person: Codable, SharkyObject {
+final class Person: Codable {
     
     var id: Int?
     var name: String?
@@ -37,14 +37,7 @@ final class SwiftySharkTests: XCTestCase {
         d.address = "18 Funtley Road, Funtley, Fareham"
         
         // or can be placed using the default store
-        d.put()
-        p.put()
-        
-        p.departmentId = d.id
-        p.put()
-        
-        // queries are on the objects themselves again, much like before
-        let results = Person().fetch(Query().where("name = ?", parameters: ["Adrian"]).limit(10))
+        db.put(p)
 
     }
 
